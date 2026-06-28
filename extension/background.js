@@ -101,6 +101,18 @@ chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
     sendResponse({ ok: true });
     return true;
   }
+
+  if (msg.type === "OPEN_SIDEPANEL_WITH_TARGET") {
+    (async () => {
+      const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+      if (tab?.windowId) {
+        await chrome.storage.session.set({ omni_prefill_target: msg.targetModel });
+        await chrome.sidePanel.open({ windowId: tab.windowId });
+      }
+      sendResponse({ ok: true });
+    })();
+    return true;
+  }
 });
 
 // ── Core: capture conversation from current tab ───────────────────────────────

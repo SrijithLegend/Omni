@@ -51,6 +51,15 @@ async function loadSettings() {
   const data = await chrome.storage.local.get(["omni_api_key", "omni_api_provider"]);
   if (data.omni_api_key) apiKeyInput.value = data.omni_api_key;
   if (data.omni_api_provider) apiProvider.value = data.omni_api_provider;
+  // Check for prefilled target from rate-limit banner quick-pick
+  const session = await chrome.storage.session.get("omni_prefill_target");
+  if (session.omni_prefill_target) {
+    const opt = Array.from(targetModelSelect.options).find(o => o.value === session.omni_prefill_target);
+    if (opt) targetModelSelect.value = session.omni_prefill_target;
+    await chrome.storage.session.remove("omni_prefill_target");
+    // Switch to transfer tab and highlight
+    switchTab("transfer");
+  }
   updateTransferButton();
 }
 
