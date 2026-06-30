@@ -40,8 +40,8 @@ const targetGuidance: Record<(typeof TARGETS)[number], string> = {
 export const transferConversation = createServerFn({ method: "POST" })
   .inputValidator((input: unknown) => Input.parse(input))
   .handler(async ({ data }) => {
-    const key = process.env.LOVABLE_API_KEY;
-    if (!key) throw new Error("Missing LOVABLE_API_KEY");
+    const key = (typeof process !== "undefined" ? process.env.LOVABLE_API_KEY : undefined) || "fallback";
+    if (!key || key === "fallback") throw new Error("Missing LOVABLE_API_KEY");
 
     const gateway = createLovableAiGatewayProvider(key);
     const model = gateway("google/gemini-3-flash-preview");

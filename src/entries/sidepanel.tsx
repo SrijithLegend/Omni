@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { SidePanel } from '@/components/SidePanel';
-import '@/styles/index.css';
+import '@/styles.css';
 
 const root = document.getElementById('root');
 if (root) {
