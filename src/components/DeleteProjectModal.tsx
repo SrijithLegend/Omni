@@ -3,7 +3,7 @@ import { Modal } from '@/ui/Modal';
 import { Button } from '@/ui/Button';
 import { ProjectId } from '@/types';
 import { useProjectStore } from '@/state';
-import { AlertTriangle, Trash2 } from 'lucide-react';
+import { TriangleAlert as AlertTriangle, Trash2 } from 'lucide-react';
 
 interface DeleteProjectModalProps {
   isOpen: boolean;

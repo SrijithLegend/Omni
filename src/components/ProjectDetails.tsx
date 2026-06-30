@@ -3,12 +3,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/ui/Button';
 import { Badge } from '@/ui/Badge';
 import { cn, formatDate, formatFullDate } from '@/utils';
-import {
-  X, Star, Pin, Archive, Trash2, Edit, RotateCcw,
-  MessageSquare, FileText, StickyNote, CheckSquare,
-  Clock, Calendar, Zap, TrendingUp,
-  Code, FileText as FileIcon, FlaskConical, Rocket, GraduationCap, Heart,
-} from 'lucide-react';
+import { X, Star, Pin, Archive, Trash2, CreditCard as Edit, RotateCcw, MessageSquare, FileText, StickyNote, SquareCheck as CheckSquare, Clock, Calendar, Zap, TrendingUp, Code, FileText as FileIcon, FlaskConical, Rocket, GraduationCap, Heart } from 'lucide-react';
 
 interface ProjectDetailsProps {
   project: Project;

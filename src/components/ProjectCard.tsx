@@ -2,7 +2,7 @@ import { Project, ProjectId } from '@/types';
 import { formatDate } from '@/utils';
 import { cn } from '@/utils';
 import { motion } from 'framer-motion';
-import { Star, Pin, Archive, Trash2, Edit, ArrowRight, MessageSquare, FileText, StickyNote, CheckSquare } from 'lucide-react';
+import { Star, Pin, Archive, Trash2, CreditCard as Edit, ArrowRight, MessageSquare, FileText, StickyNote, SquareCheck as CheckSquare } from 'lucide-react';
 import * as Icons from 'lucide-react';
 
 interface ProjectCardProps {
