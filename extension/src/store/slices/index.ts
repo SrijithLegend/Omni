@@ -10,3 +10,4 @@ export * from "./search";
 export * from "./timeline";
 export * from "./connector";
 export * from "./notification";
+export * from "./conversation";
